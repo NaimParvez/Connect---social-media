@@ -1,3 +1,4 @@
+import { upsertStreamUser } from "../lib/stream.js";
 import User from "../../models/User.js";
 import jwt from "jsonwebtoken";
 
@@ -38,6 +39,19 @@ export async function signup(req, res) {
     });
 
     //create this user in steam as well
+
+    try {
+      await upsertStreamUser({
+        id: newUser._id.toString(),
+        name: newUser.fullName,
+        image: newUser.profilepic || "",
+      });
+      console.log(
+        `Stream user created/updated successfully for ${newUser.fullName}`
+      );
+    } catch (error) {
+      console.error("Error creating/updating Stream user:", error);
+    }
 
     const token = jwt.sign(
       { userId: newUser._id },

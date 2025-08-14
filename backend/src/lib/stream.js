@@ -1,4 +1,4 @@
-import {Streamchat} from "stream-chat";
+import {StreamChat} from "stream-chat";
 import "dotenv/config";
 
 
@@ -9,4 +9,15 @@ if (!apiKey || !apiSecret) {
   console.error("Missing Stream API KEY or SECRET credentials");
 }
 
-const streamClient = Streamchat.getInstance(apiKey, apiSecret);
+const streamClient = StreamChat.getInstance(apiKey, apiSecret);
+
+export const  upsertStreamUser = async (userData) =>{
+    try {
+        await streamClient.upsertUsers([userData]);
+        return userData;
+    } catch (error) {
+        console.error("Error creating/updating Stream user:", error);
+    }
+}
+
+export const generateStreamToken =(userId) => {};
