@@ -15,6 +15,7 @@ A full-stack social media application with user authentication, friend requests,
 - 📋 Image/media uploads - _Planned_
 - 📋 Comments and reactions - _Planned_
 - 📋 Chat/messaging system - _Planned_
+- 📋 Video Calling system - _Planned_
 
 ## Current Status
 
