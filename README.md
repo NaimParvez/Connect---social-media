@@ -1,6 +1,6 @@
 # Connect---Social-Media
 
-> ⚠️ **Status: Under Development** - This project is currently in active development and not ready for production use.
+> ⚠️ **Status: Under Development** - This project is currently in active development.
 
 A full-stack social media application with user authentication, friend requests, and real-time features. Built with Node.js/Express for the backend and React/Vite for the frontend.
 
